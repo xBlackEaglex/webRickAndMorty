@@ -6,50 +6,56 @@
     --orange: #ffab07;
     --font-funny: 'Gloria Hallelujah', cursive;
 }
+html {
+    font-size: 62.5%;
+    width: 100%;
+    height: auto;
+}
 body {
     margin: 0;
     background-color: var(--grey);
     font-family: var(--font-funny);
     color: white;
+    width: 100%;
+    height: auto;
 }
 
 /*Header*/
 
 header {
-    display: flex;
-    align-items: center;
-    padding: 24px 24px;
+    max-width: 100%;
+    padding: 2.4rem 2.4rem 0;
 }
 .navbar {
     display: flex;
+    flex-direction: row;
+    flex-flow: wrap;
     align-items: center;
     justify-content: center;
     width: 100%;
-    margin-right: 40em;
 }
 .logo {
-    width: 170px;
-    height: 100px;
-    display: flex;
-    align-items: center;
-    margin-left: 26em;
+    width: 17rem;
+    height: 10rem;
 }
 .navbar ul {
     list-style: none;
-    column-gap: 4em;
+    column-gap: 3rem;
     display: flex;
+    flex-direction: row;
     padding: 0;
 }
 .navbar ul li a{
     text-decoration: none;
     color: white;
-    font-size: 22px;
+    font-size: 2.2rem;
 }
 
 /*Main*/
 
 main {
-    padding: 24px 24px;
+    max-width: 100%;
+    padding: 2.4rem 2.4rem 0;
 }
 .home {
     display: flex;
@@ -66,8 +72,9 @@ main {
     margin : 0;
 }
 .background img {
-    border-radius: 100px;
     object-fit: cover;
+    max-width: 100%;
+    max-height: auto;
 }
 
 /*articles*/
@@ -78,14 +85,14 @@ main {
     justify-content: center;
     width: 100%;
     height: auto;
-    column-gap: 6em;
+    column-gap: 2rem;
 }
 .article {
     display: flex;
-    column-gap: 2em;
+    column-gap: 2rem;
     background-color: var(--yellow);
     border-radius: 20px;
-    padding: 1em;
+    padding: 2rem;
     color: black;
 }
 .article img {
