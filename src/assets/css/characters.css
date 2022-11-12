@@ -6,6 +6,11 @@
     --orange: #ffab07;
     --font-funny: 'Gloria Hallelujah', cursive;
 }
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 html {
     font-size: 62.5%;
     width: 100%;
@@ -82,9 +87,10 @@ main {
     max-height: auto;
 }
 .home h1 {
-    font-size: 2.5rem;
+    font-size: 4rem;
     text-align: center;
-    margin-top: 1rem;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
 }
 .search {
     display: flex;
@@ -92,7 +98,7 @@ main {
     align-items : center;
     justify-content: center;
     column-gap: 1rem;
-    padding-bottom: 2rem;
+    padding: 2rem 0 4rem;
     max-height: 3rem;
     width: 80%;
 }
@@ -101,7 +107,7 @@ main {
     height: 4rem;
 }
 .search input {
-    max-width: 60%;
+    max-width: 80%;
 }
 
 /*articles*/
@@ -167,5 +173,8 @@ main {
     }
     .navbar {
         padding-right: 0rem;
+    }
+    .home h1 {
+        font-size: 3rem;
     }
 }
