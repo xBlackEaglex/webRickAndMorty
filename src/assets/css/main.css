@@ -32,7 +32,8 @@ header {
     flex-flow: wrap;
     align-items: center;
     justify-content: center;
-    width: 100%;
+    max-width: 100%;
+    padding-right: 5rem;
 }
 .logo {
     width: 17rem;
@@ -41,8 +42,12 @@ header {
 .navbar ul {
     list-style: none;
     column-gap: 3rem;
+    max-width: 100%;
     display: flex;
     flex-direction: row;
+    flex-flow: wrap;
+    align-items: center;
+    justify-content: center;
     padding: 0;
 }
 .navbar ul li a{
@@ -76,26 +81,79 @@ main {
     max-width: 100%;
     max-height: auto;
 }
+.home h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-top: 1rem;
+}
+.home h2 {
+    font-size: 1.4rem;
+    text-align: center;
+    padding-bottom: 2rem;
+}
 
 /*articles*/
 
 .articles {
     display: flex;
+    flex-direction: row;
+    flex-flow: wrap;
     align-items: center;
     justify-content: center;
     width: 100%;
     height: auto;
     column-gap: 2rem;
+    row-gap: 2rem;
 }
 .article {
+    max-width: 100%;
+    max-height: 100%;
     display: flex;
+    flex-direction: row;
+    align-items : center;
+    justify-content: center;
+    flex-flow: wrap;
     column-gap: 2rem;
     background-color: var(--yellow);
     border-radius: 20px;
     padding: 2rem;
     color: black;
 }
+.content {
+    max-width: 100%;
+    max-height: auto;
+}
 .article img {
     object-fit: cover;
+    max-width: 100%;
+    max-height: auto;
     border-radius: 20px;
+}
+.article p {
+    max-width: 100%;
+    font-size: 1.6rem;
+    font-weight: bold;
+    text-align: center;
+}
+#nom{
+    background-color: var(--blue);
+    color: white;
+    padding: 0.5rem;
+    border-radius: 2rem;
+    font-size: 2.4rem;
+}
+
+#textLocation, #textSeen {
+    color: var(--green);
+}
+
+/*articles*/
+
+@media (max-width: 640px) {
+    .navbar ul li a{
+        font-size: 1.8rem;
+    }
+    .navbar {
+        padding-right: 0rem;
+    }
 }
