@@ -204,4 +204,10 @@ main {
     #nom{
         margin-top: 1rem;
     }
+    .location {
+        width: 100%;
+    }
+    .episode {
+        width: 100%;
+    }
 }
