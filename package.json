@@ -1,0 +1,25 @@
+{
+  "name": "webrickandmorty",
+  "version": "1.0.0",
+  "description": "una web de practica del consumo de API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xBlackEaglex/webRickAndMorty.git"
+  },
+  "keywords": [
+    "api",
+    "js",
+    "rick&morty",
+    "html"
+  ],
+  "author": "Roberto Vazquez <roberto_smusic@hotmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/xBlackEaglex/webRickAndMorty/issues"
+  },
+  "homepage": "https://github.com/xBlackEaglex/webRickAndMorty#readme"
+}

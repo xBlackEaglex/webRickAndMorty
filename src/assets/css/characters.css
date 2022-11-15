@@ -102,7 +102,7 @@ main {
     max-height: 3rem;
     width: 80%;
 }
-.search img {
+.search a img {
     width: 4rem;
     height: 4rem;
 }
@@ -160,12 +160,11 @@ main {
     border-radius: 2rem;
     font-size: 2.4rem;
 }
-
 #textLocation, #textSeen {
     color: var(--green);
 }
 
-/*articles*/
+/*media query*/
 
 @media (max-width: 640px) {
     .navbar ul li a{
@@ -176,5 +175,8 @@ main {
     }
     .home h1 {
         font-size: 3rem;
+    }
+    #nom{
+        margin-top: 1rem;
     }
 }

@@ -148,12 +148,51 @@ main {
     border-radius: 2rem;
     font-size: 2.4rem;
 }
-
 #textLocation, #textSeen {
     color: var(--green);
 }
+.location {
+    max-width: 100%;
+    height: 34rem;
+    display: flex;
+    flex-direction: row;
+    align-items : center;
+    justify-content: center;
+    flex-flow: wrap;
+    column-gap: 2rem;
+    background-color: var(--yellow);
+    border-radius: 20px;
+    padding: 2rem;
+    color: black;
+}
+.location p {
+    max-width: 100%;
+    font-size: 1.6rem;
+    font-weight: bold;
+    text-align: center;
+}
+.episode {
+    max-width: 100%;
+    height: 34rem;
+    display: flex;
+    flex-direction: row;
+    align-items : center;
+    justify-content: center;
+    flex-flow: wrap;
+    column-gap: 2rem;
+    background-color: var(--yellow);
+    border-radius: 20px;
+    padding: 2rem;
+    color: black;
+}
+.episode p {
+    max-width: 100%;
+    font-size: 1.6rem;
+    font-weight: bold;
+    text-align: center;
+}
 
-/*articles*/
+/*media query*/
 
 @media (max-width: 640px) {
     .navbar ul li a{
@@ -161,5 +200,8 @@ main {
     }
     .navbar {
         padding-right: 0rem;
+    }
+    #nom{
+        margin-top: 1rem;
     }
 }
