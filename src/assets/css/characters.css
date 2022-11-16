@@ -102,12 +102,17 @@ main {
     max-height: 3rem;
     width: 80%;
 }
-.search a img {
+.search .btn {
+    background-color: transparent;
+    border: none;
+}
+.search .btn img {
     width: 4rem;
     height: 4rem;
 }
 .search input {
     max-width: 80%;
+    text-align: center;
 }
 
 /*articles*/
@@ -122,6 +127,34 @@ main {
     height: auto;
     column-gap: 2rem;
     row-gap: 2rem;
+}
+.articles h1 {
+    max-width: 100%;
+    font-size: 4rem;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 5rem;
+}
+.sectionMore {
+    display: flex;
+    flex-direction: row;
+    flex-flow: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+}
+.more {
+    background-color: transparent;
+    border: none;
+    align-items: center;
+    justify-content: center;
+}
+.more img {
+    width: 8rem;
+    height: 8rem;
 }
 .article {
     max-width: 100%;
@@ -178,5 +211,8 @@ main {
     }
     #nom{
         margin-top: 1rem;
+    }
+    .more {
+        transform: rotate(0.25turn);
     }
 }
