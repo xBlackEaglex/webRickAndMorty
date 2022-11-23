@@ -17,17 +17,26 @@ const show = async(urlApi) => {
             const infoCharacters = await fetchData(`${urlApi}/character`);
             const numCharacters = await infoCharacters.info.count;
             let numRandom = Math.floor(Math.random() * numCharacters);
+            while (numRandom == 0) {
+                numRandom = Math.floor(Math.random() * numCharacters);
+            };
             const character = await fetchData(`${urlApi}/character/${numRandom}`);
             const episode = await fetchData(character.episode[0]);
 
             const infoLocations = await fetchData(`${urlApi}/location`);
             const numLocations = await infoLocations.info.count;
             let numRandomLocation = Math.floor(Math.random() * numLocations);
+            while (numRandomLocation == 0) {
+                numRandomLocation = Math.floor(Math.random() * numLocations);
+            };
             const location = await fetchData(`${urlApi}/location/${numRandomLocation}`);
             
             const infoEpisodes = await fetchData(`${urlApi}/episode`);
             const numEpisodes = await infoEpisodes.info.count;
             let numRandomEpisode = Math.floor(Math.random() * numEpisodes);
+            while (numRandomEpisode == 0) {
+                numRandomEpisode = Math.floor(Math.random() * numEpisodes);
+            };
             const showEpisode = await fetchData(`${urlApi}/episode/${numRandomEpisode}`);
             
             let start =`

@@ -37,25 +37,22 @@ const show = async(urlApi) => {
 
         for (let i = 0; i < 6; i++) {
 
-            const infoCharacters = await fetchData(`${urlApi}/character`);
-            const num = await infoCharacters.info.count;
-            let numRandom = Math.floor(Math.random() * num);
-            while (numRandom == 0) {
-                numRandom = Math.floor(Math.random() * num);
+            const infoLocations = await fetchData(`${urlApi}/location`);
+            const numLocations = await infoLocations.info.count;
+            let numRandomLocation = Math.floor(Math.random() * numLocations);
+            while (numRandomLocation == 0) {
+                numRandomLocation = Math.floor(Math.random() * numLocations);
             };
-            const character = await fetchData(`${urlApi}/character/${numRandom}`);
-            const episode = await fetchData(character.episode[0]);
+            const location = await fetchData(`${urlApi}/location/${numRandomLocation}`);
             
             let start =`
-                <article class="article">
-                <img src="${character.image}" alt="character">
+                <article class="location">
                 <div class="content">
-                <p id="nom">${character.name}</p>
-                <p id="status">${character.status} - ${character.species}</p>
-                <p id="textLocation">Last known location:</p>
-                <p id="location">${character.location.name}</p>
-                <p id="textSeen">First seen in:</p>
-                <p id="seen">${episode.name}</p>
+                <p id="nom">${location.name}</p>
+                <p id="textLocation">Type:</p>
+                <p id="location">${location.type}</p>
+                <p id="textSeen">Dimension:</p>
+                <p id="seen">${location.dimension}</p>
                 </div>
                 </article>
             `;
@@ -87,21 +84,17 @@ const search = async(urlApi) => {
         previous.style.visibility = "hidden";
     } else {
         try {
-            const character = await fetchData(`${urlApi}/character/?name=${text}`);
-            
+            const location = await fetchData(`${urlApi}/location/?name=${text}`);
 
-            if (iterator < character.results.length) {
-                const episode = await fetchData(character.results[iterator].episode[0]);
+            if (iterator < location.results.length) {
                 let start = `
-                <article class="article">
-                <img src="${character.results[iterator].image}" alt="character">
+                <article class="location">
                 <div class="content">
-                <p id="nom">${character.results[iterator].name}</p>
-                <p id="status">${character.results[iterator].status} - ${character.results[iterator].species}</p>
-                <p id="textLocation">Last known location:</p>
-                <p id="location">${character.results[iterator].location.name}</p>
-                <p id="textSeen">First seen in:</p>
-                <p id="seen">${episode.name}</p>
+                <p id="nom">${location.results[iterator].name}</p>
+                <p id="textLocation">Type:</p>
+                <p id="location">${location.results[iterator].type}</p>
+                <p id="textSeen">Dimension:</p>
+                <p id="seen">${location.results[iterator].dimension}</p>
                 </div>
                 </article>
             `;
@@ -115,14 +108,14 @@ const search = async(urlApi) => {
                     previous.style.visibility = "visible";
                     more.style.visibility = "hidden";
                 };
-                if (character.results.length == 1){
+                if (location.results.length == 1){
                     next.style.visibility = "hidden";
                 }else{
 
                 };
 
                 articles.innerHTML = start;
-                //console.log(iterator,character.results.length);
+                //console.log(iterator,location.results.length);
 
             }
             else {

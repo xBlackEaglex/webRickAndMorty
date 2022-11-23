@@ -37,25 +37,22 @@ const show = async(urlApi) => {
 
         for (let i = 0; i < 6; i++) {
 
-            const infoCharacters = await fetchData(`${urlApi}/character`);
-            const num = await infoCharacters.info.count;
-            let numRandom = Math.floor(Math.random() * num);
-            while (numRandom == 0) {
-                numRandom = Math.floor(Math.random() * num);
+            const infoEpisodes = await fetchData(`${urlApi}/episode`);
+            const numEpisodes = await infoEpisodes.info.count;
+            let numRandomEpisode = Math.floor(Math.random() * numEpisodes);
+            while (numRandomEpisode == 0) {
+                numRandomEpisode = Math.floor(Math.random() * numEpisodes);
             };
-            const character = await fetchData(`${urlApi}/character/${numRandom}`);
-            const episode = await fetchData(character.episode[0]);
+            const showEpisode = await fetchData(`${urlApi}/episode/${numRandomEpisode}`);
             
             let start =`
-                <article class="article">
-                <img src="${character.image}" alt="character">
+                <article class="episode">
                 <div class="content">
-                <p id="nom">${character.name}</p>
-                <p id="status">${character.status} - ${character.species}</p>
-                <p id="textLocation">Last known location:</p>
-                <p id="location">${character.location.name}</p>
-                <p id="textSeen">First seen in:</p>
-                <p id="seen">${episode.name}</p>
+                <p id="nom">${showEpisode.name}</p>
+                <p id="textLocation">Air Date:</p>
+                <p id="location">${showEpisode.air_date}</p>
+                <p id="textSeen">Episode:</p>
+                <p id="seen">${showEpisode.episode}</p>
                 </div>
                 </article>
             `;
@@ -87,21 +84,16 @@ const search = async(urlApi) => {
         previous.style.visibility = "hidden";
     } else {
         try {
-            const character = await fetchData(`${urlApi}/character/?name=${text}`);
-            
-
-            if (iterator < character.results.length) {
-                const episode = await fetchData(character.results[iterator].episode[0]);
+            const showEpisode = await fetchData(`${urlApi}/episode/?name=${text}`);
+            if (iterator < showEpisode.results.length) {
                 let start = `
-                <article class="article">
-                <img src="${character.results[iterator].image}" alt="character">
+                <article class="episode">
                 <div class="content">
-                <p id="nom">${character.results[iterator].name}</p>
-                <p id="status">${character.results[iterator].status} - ${character.results[iterator].species}</p>
-                <p id="textLocation">Last known location:</p>
-                <p id="location">${character.results[iterator].location.name}</p>
-                <p id="textSeen">First seen in:</p>
-                <p id="seen">${episode.name}</p>
+                <p id="nom">${showEpisode.results[iterator].name}</p>
+                <p id="textLocation">Air Date:</p>
+                <p id="location">${showEpisode.results[iterator].air_date}</p>
+                <p id="textSeen">Episode:</p>
+                <p id="seen">${showEpisode.results[iterator].episode}</p>
                 </div>
                 </article>
             `;
@@ -115,14 +107,14 @@ const search = async(urlApi) => {
                     previous.style.visibility = "visible";
                     more.style.visibility = "hidden";
                 };
-                if (character.results.length == 1){
+                if (showEpisode.results.length == 1){
                     next.style.visibility = "hidden";
                 }else{
 
                 };
 
                 articles.innerHTML = start;
-                //console.log(iterator,character.results.length);
+                //console.log(iterator,showEpisode.results.length);
 
             }
             else {

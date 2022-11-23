@@ -1,0 +1,247 @@
+:root {
+    --grey: #1c2130;
+    --blue: #0e8d94;
+    --green: #72ad75;
+    --yellow: #e9d558;
+    --orange: #ffab07;
+    --font-funny: 'Gloria Hallelujah', cursive;
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html {
+    font-size: 62.5%;
+    width: 100%;
+    height: auto;
+}
+body {
+    margin: 0;
+    background-color: var(--grey);
+    font-family: var(--font-funny);
+    color: white;
+    width: 100%;
+    height: auto;
+}
+a {
+    cursor: pointer;
+}
+button {
+    cursor: pointer;
+}
+
+/*Header*/
+
+header {
+    max-width: 100%;
+    padding: 2.4rem 2.4rem 0;
+}
+.navbar {
+    display: flex;
+    flex-direction: row;
+    flex-flow: wrap;
+    align-items: center;
+    justify-content: center;
+    max-width: 100%;
+    padding-right: 5rem;
+}
+.logo {
+    width: 17rem;
+    height: 10rem;
+}
+.navbar ul {
+    list-style: none;
+    column-gap: 3rem;
+    max-width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-flow: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+.navbar ul li a{
+    text-decoration: none;
+    color: white;
+    font-size: 2.2rem;
+}
+
+/*Main*/
+
+main {
+    max-width: 100%;
+    padding: 2.4rem 2.4rem 0;
+}
+.home {
+    display: flex;
+    flex-direction: column;
+    align-items : center;
+    justify-content: center;
+}
+.background {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    margin : 0;
+}
+.background img {
+    object-fit: cover;
+    max-width: 100%;
+    max-height: auto;
+}
+.home h1 {
+    font-size: 4rem;
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+}
+.search {
+    display: flex;
+    flex-direction: row;
+    align-items : center;
+    justify-content: center;
+    column-gap: 1rem;
+    padding: 2rem 0 4rem;
+    max-height: 3rem;
+    width: 80%;
+}
+.search .btn {
+    background-color: transparent;
+    border: none;
+}
+.search .btn img {
+    width: 4rem;
+    height: 4rem;
+}
+.search input {
+    max-width: 80%;
+    text-align: center;
+}
+
+/*articles*/
+
+.articles {
+    display: flex;
+    flex-direction: row;
+    flex-flow: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    column-gap: 2rem;
+    row-gap: 2rem;
+}
+.articles h1 {
+    max-width: 100%;
+    font-size: 4rem;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 5rem;
+}
+.sectionMore {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 100%;
+    max-height: auto;
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+    column-gap: 4rem;
+}
+.more {
+    max-width: 100%;
+    max-height: auto;
+    background-color: transparent;
+    border: none;
+    align-items: center;
+    justify-content: center;
+}
+.more img {
+    max-width: 70%;
+    max-height: auto;
+}
+.next {
+    max-width: 100%;
+    max-height: auto;
+    background-color: transparent;
+    border: none;
+    align-items: center;
+    justify-content: center;
+}
+.next img {
+    max-width: 70%;
+    max-height: auto;
+}
+.previous {
+    max-width: 100%;
+    max-height: auto;
+    background-color: transparent;
+    border: none;
+    align-items: center;
+    justify-content: center;
+}
+.previous img {
+    max-width: 70%;
+    max-height: auto;
+    transform: rotate(0.5turn);
+}
+.episode {
+    max-width: 100%;
+    height: 34rem;
+    display: flex;
+    flex-direction: row;
+    align-items : center;
+    justify-content: center;
+    flex-flow: wrap;
+    column-gap: 2rem;
+    background-color: var(--yellow);
+    border-radius: 20px;
+    padding: 2rem;
+    color: black;
+}
+.episode p {
+    max-width: 100%;
+    font-size: 1.6rem;
+    font-weight: bold;
+    text-align: center;
+}
+.content {
+    max-width: 100%;
+    max-height: auto;
+}
+#nom{
+    background-color: var(--blue);
+    color: white;
+    padding: 0.5rem;
+    border-radius: 2rem;
+    font-size: 2.4rem;
+}
+#textLocation, #textSeen {
+    color: var(--green);
+}
+
+/*media query*/
+
+@media (max-width: 640px) {
+    .navbar ul li a{
+        font-size: 1.8rem;
+    }
+    .navbar {
+        padding-right: 0rem;
+    }
+    .home h1 {
+        font-size: 3rem;
+    }
+    #nom{
+        margin-top: 1rem;
+    }
+    .more {
+        transform: rotate(0.25turn);
+    }
+    .sectionMore {
+        column-gap: 1rem;
+    }
+}

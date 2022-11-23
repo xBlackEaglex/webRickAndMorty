@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="./assets/css/episodes.css">
     <title>Rick & Morty</title>
 </head>
 <body>
@@ -37,13 +37,21 @@
     <main>
         <section class="home">
             <figure class="background"><img src="./assets/img/fondo.png" alt="fondo"></figure>
-            <h1>On this website you will find the best Rick & Morty content</h1>
-            <h2>Just select the content you want to search</h2>
+            <h1>Episodes</h1>
+            <div class="search">
+                <input class="input" type="text" name="name" placeholder="name">
+                <button class="btn"><img src="./assets/img/lup.png" alt="lup"></button>
+            </div>
         </section>
         <section class="articles">
         <!-- article -->
         </section>
+        <section class="sectionMore">
+            <button class="previous"><img src="./assets/img/more.png" alt="previous"></button>
+            <button class="more"><img src="./assets/img/more.png" alt="more"></button>
+            <button class="next"><img src="./assets/img/more.png" alt="next"></button>
+        </section>
     </main>
-    <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/episodes.js"></script>
 </body>
 </html>
