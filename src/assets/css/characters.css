@@ -250,4 +250,7 @@ main {
     .sectionMore {
         column-gap: 1rem;
     }
+    .article {
+        width: 100%;
+    }
 }

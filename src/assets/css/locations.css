@@ -244,4 +244,7 @@ main {
     .sectionMore {
         column-gap: 1rem;
     }
+    .location {
+        width: 100%;
+    }
 }
